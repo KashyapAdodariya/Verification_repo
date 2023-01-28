@@ -1,0 +1,56 @@
+global coverage_group 0 pkg::coverage_h::cov_sample __coverage_coverage_h.cov_sample unused_coverage_h_cov_sample_loop_label pkg 0 1 0 0 0  ( 0 
+)
+ 1 1
+ 24 /home/runner/coverage.sv
+ 6 0 0 0 1 0 0 0 0  1
+0
+0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 76 pkg_coverage_h_11_0::pkg_coverage_h_11_0_pkg_coverage_h_11_0_cov_sample_fn_1
+0
+0
+0
+64
+0
+ 1
+ 8 seq_item 1 32 0 1
+
+1
+0
+0
+0
+ 13 seq_item.addr 8 0 0 0 0 0 74 pkg_coverage_h_11_0::pkg_coverage_h_11_0_pkg_coverage_h_11_0_cov_sample_fn 74 pkg_coverage_h_11_0::pkg_coverage_h_11_0_pkg_coverage_h_11_0_cov_sample_fn 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 8 0 0 1 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 76 pkg_coverage_h_11_0::pkg_coverage_h_11_0_pkg_coverage_h_11_0_cov_sample_fn_0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+end_coverage_group

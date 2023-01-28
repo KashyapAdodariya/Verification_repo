@@ -1,0 +1,25 @@
+xrun: 20.09-s003: (c) Copyright 1995-2020 Cadence Design Systems, Inc.
+TOOL:	xrun	20.09-s003: Started on Jan 28, 2023 at 01:08:48 EST
+xrun
+	-Q
+	-unbuffered
+	-timescale 1ns/1ns
+	-sysv
+	-access +rw
+	design.sv
+	testbench.sv
+	Top level design units:
+		$unit_0x4ccdf83b
+		test
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+Loading snapshot worklib.test:sv .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /xcelium20.09/tools/xcelium/files/xmsimrc
+xcelium> run
+p1 id : 0, data : ab, length : 5
+p2 id : 0, data : ab, length : 5
+p2 id : 2, data : cd, length : 100
+p1 id : 0, data : ab, length : 5
+xmsim: *W,RNQUIE: Simulation is complete.
+xcelium> exit
+TOOL:	xrun	20.09-s003: Exiting on Jan 28, 2023 at 01:08:49 EST  (total: 00:00:01)
