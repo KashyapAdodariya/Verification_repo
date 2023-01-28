@@ -1,0 +1,3 @@
+UVM_INFO env.svh(40) @ 25: uvm_test_top.jb_env.jb_fc [id1] RED CHOCOLATE 1
+UVM_ERROR env.svh(44) @ 25: uvm_test_top.jb_env.jb_fc [id1] RED CHOCOLATE 5
+UVM_FATAL env.svh(46) @ 25: uvm_test_top.jb_env.jb_fc [id1] RED CHOCOLATE 7

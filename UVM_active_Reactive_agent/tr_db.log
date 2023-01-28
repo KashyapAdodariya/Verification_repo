@@ -1,1 +1,0 @@
-  CREATE_STREAM @0 {NAME:reactive_seq T:Transactions SCOPE:uvm_test_top.env.agt[0].seqr STREAM:1308}

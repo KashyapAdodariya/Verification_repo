@@ -1,0 +1,93 @@
+xrun: 20.09-s003: (c) Copyright 1995-2020 Cadence Design Systems, Inc.
+TOOL:	xrun	20.09-s003: Started on Jan 28, 2023 at 01:34:54 EST
+xrun
+	-Q
+	-unbuffered
+	-timescale 1ns/1ns
+	-sysv
+	-access +rw
+	-uvmnocdnsextra
+	-uvmhome /xcelium20.09/tools//methodology/UVM/CDNS-1.2/sv
+	/xcelium20.09/tools//methodology/UVM/CDNS-1.2/sv/src/uvm_macros.svh
+	design.sv
+	testbench.sv
+    comp.compare_object("tr_compare", tr1, tr2);
+                      |
+xmvlog: *W,FUNTSK (testbench.sv,34|22): function called as a task without void'().
+    comp.compare_object("tr_compare", tr1, tr2);
+                      |
+xmvlog: *W,FUNTSK (testbench.sv,36|22): function called as a task without void'().
+    comp.compare_field_int("int_compare", 5'h2, 5'h4, 5);
+                         |
+xmvlog: *W,FUNTSK (testbench.sv,39|25): function called as a task without void'().
+    comp.compare_string("string_compare", "name", "names");
+                      |
+xmvlog: *W,FUNTSK (testbench.sv,40|22): function called as a task without void'().
+    comp.compare_field_int("int_compare", 5'h4, 5'h4, 5);
+                         |
+xmvlog: *W,FUNTSK (testbench.sv,44|25): function called as a task without void'().
+    comp.compare_string("string_compare", "name", "name");
+                      |
+xmvlog: *W,FUNTSK (testbench.sv,45|22): function called as a task without void'().
+	Top level design units:
+		uvm_pkg
+		$unit_0x4ccdf83b
+		tb_top
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+Loading snapshot worklib.tb_top:sv .................... Done
+SVSEED default: 1
+xmsim: *W,RNDXCELON: A newer version of the SystemVerilog constraint solver is being used which has better support for array-solving, new solve-order mechanism, and seed stability enhancements..
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /xcelium20.09/tools/xcelium/files/xmsimrc
+xcelium> source /xcelium20.09/tools//methodology/UVM/CDNS-1.2/sv/files/tcl/uvm_sim.tcl
+xcelium> run
+UVM_INFO /xcelium20.09/tools//methodology/UVM/CDNS-1.2/sv/src/base/uvm_root.svh(412) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+CDNS-UVM-1.2 (20.09-s003)
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test base_test...
+UVM_INFO testbench.sv(33) @ 0: uvm_test_top [uvm_test_top] Comparing objects
+UVM_ERROR /xcelium20.09/tools//methodology/UVM/CDNS-1.2/sv/src/base/uvm_comparer.svh(351) @ 0: reporter [MISCMP] Miscompare for tr_compare.addr: lhs = 'hf87e : rhs = 'h7781
+UVM_ERROR /xcelium20.09/tools//methodology/UVM/CDNS-1.2/sv/src/base/uvm_comparer.svh(351) @ 0: reporter [MISCMP] Miscompare for tr_compare.data: lhs = 'h6139 : rhs = 'hf210
+UVM_ERROR /xcelium20.09/tools//methodology/UVM/CDNS-1.2/sv/src/base/uvm_comparer.svh(382) @ 0: reporter [MISCMP] 2 Miscompare(s) for object tr2@1874 vs. tr1@1872
+UVM_ERROR /xcelium20.09/tools//methodology/UVM/CDNS-1.2/sv/src/base/uvm_comparer.svh(382) @ 0: reporter [MISCMP] 2 Miscompare(s) for object tr2@1874 vs. tr1@1872
+UVM_INFO testbench.sv(37) @ 0: uvm_test_top [uvm_test_top] Comparing objects: result = 2
+UVM_ERROR /xcelium20.09/tools//methodology/UVM/CDNS-1.2/sv/src/base/uvm_comparer.svh(351) @ 0: reporter [MISCMP] Miscompare for int_compare: lhs = 'h2 : rhs = 'h4
+UVM_ERROR /xcelium20.09/tools//methodology/UVM/CDNS-1.2/sv/src/base/uvm_comparer.svh(351) @ 0: reporter [MISCMP] Miscompare for string_compare: lhs = "name" : rhs = "names"
+UVM_INFO testbench.sv(42) @ 0: uvm_test_top [uvm_test_top] Comparing objects: result = 4
+UVM_INFO /xcelium20.09/tools//methodology/UVM/CDNS-1.2/sv/src/base/uvm_report_server.svh(847) @ 0: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :    5
+UVM_WARNING :    0
+UVM_ERROR :    6
+UVM_FATAL :    0
+** Report counts by id
+[MISCMP]     6
+[RNTST]     1
+[UVM/RELNOTES]     1
+[uvm_test_top]     3
+
+Simulation complete via $finish(1) at time 0 FS + 231
+/xcelium20.09/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_root.svh:543     $finish;
+xcelium> exit
+TOOL:	xrun	20.09-s003: Exiting on Jan 28, 2023 at 01:35:02 EST  (total: 00:00:08)

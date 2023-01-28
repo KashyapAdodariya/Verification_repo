@@ -1,0 +1,72 @@
+xrun: 20.09-s003: (c) Copyright 1995-2020 Cadence Design Systems, Inc.
+TOOL:	xrun	20.09-s003: Started on Jan 28, 2023 at 01:32:28 EST
+xrun
+	-Q
+	-unbuffered
+	-timescale 1ns/1ns
+	-sysv
+	-access +rw
+	-uvmnocdnsextra
+	-uvmhome /xcelium20.09/tools//methodology/UVM/CDNS-1.2/sv
+	/xcelium20.09/tools//methodology/UVM/CDNS-1.2/sv/src/uvm_macros.svh
+	design.sv
+	testbench.sv
+    transaction tr_A = new();
+                     |
+xmvlog: *W,VARIST (testbench.sv,22|21): Local static variable with initializer requires 'static' keyword.
+	Top level design units:
+		uvm_pkg
+		$unit_0x4ccdf83b
+		event_example
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+Loading snapshot worklib.event_example:sv .................... Done
+SVSEED default: 1
+xmsim: *W,RNDXCELON: A newer version of the SystemVerilog constraint solver is being used which has better support for array-solving, new solve-order mechanism, and seed stability enhancements..
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /xcelium20.09/tools/xcelium/files/xmsimrc
+xcelium> source /xcelium20.09/tools//methodology/UVM/CDNS-1.2/sv/files/tcl/uvm_sim.tcl
+xcelium> run
+UVM_INFO /xcelium20.09/tools//methodology/UVM/CDNS-1.2/sv/src/base/uvm_root.svh(412) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+CDNS-UVM-1.2 (20.09-s003)
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+@0: waiting for the event e1
+@10: Before triggering event e1
+-------------------------------------
+Name         Type         Size  Value
+-------------------------------------
+transaction  transaction  -     @1798
+  addr       integral     8     'h2f 
+  data       integral     8     'hb3 
+-------------------------------------
+@10: After triggering event e1
+@10: event e1 is triggered and data received = 
+-------------------------------------
+Name         Type         Size  Value
+-------------------------------------
+transaction  transaction  -     @1798
+  addr       integral     8     'h2f 
+  data       integral     8     'hb3 
+-------------------------------------
+
+xmsim: *W,RNQUIE: Simulation is complete.
+xcelium> exit
+TOOL:	xrun	20.09-s003: Exiting on Jan 28, 2023 at 01:32:34 EST  (total: 00:00:06)

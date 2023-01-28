@@ -1,0 +1,119 @@
+xrun: 20.09-s003: (c) Copyright 1995-2020 Cadence Design Systems, Inc.
+TOOL:	xrun	20.09-s003: Started on Jan 28, 2023 at 01:50:24 EST
+xrun
+	-Q
+	-unbuffered
+	-timescale 1ns/1ns
+	-sysv
+	-access +rw
+	+UVM_TESTNAME=dma_reg_test
+	-uvmnocdnsextra
+	-uvmhome /xcelium20.09/tools//methodology/UVM/CDNS-1.2/sv
+	/xcelium20.09/tools//methodology/UVM/CDNS-1.2/sv/src/uvm_macros.svh
+	design.sv
+	testbench.sv
+    req.randomize();
+                |
+xmvlog: *W,FUNTSK (dma_agent_files.sv,79|16): function called as a task without void'().
+(`include file: dma_agent_files.sv line 79, `include file: dma_agent.sv line 2, `include file: dma_env.sv line 4, `include file: dma_test.sv line 7, file: testbench.sv line 6)
+	Top level design units:
+		uvm_pkg
+		$unit_0x67f934e9
+		tbench_top
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+Loading snapshot worklib.tbench_top:sv .................... Done
+SVSEED default: 1
+xmsim: *W,RNDXCELON: A newer version of the SystemVerilog constraint solver is being used which has better support for array-solving, new solve-order mechanism, and seed stability enhancements..
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /xcelium20.09/tools/xcelium/files/xmsimrc
+xcelium> source /xcelium20.09/tools//methodology/UVM/CDNS-1.2/sv/files/tcl/uvm_sim.tcl
+xcelium> run
+UVM_INFO /xcelium20.09/tools//methodology/UVM/CDNS-1.2/sv/src/base/uvm_root.svh(412) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+CDNS-UVM-1.2 (20.09-s003)
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+xmsim: *W,PRPASZ: Packed array at "worklib.uvm_pkg::uvm_string_to_bits.uvm_string_to_bits" of 115200 bits exceeds limit of 4096 - not probed
+ Use 'probe -create -packed 115200 worklib.uvm_pkg::uvm_string_to_bits.uvm_string_to_bits' or 'setenv SHM_PACKED_LIMIT 115200' to adjust limit.
+xmsim: *W,PRPASZ: Packed array at "worklib.uvm_pkg::uvm_bits_to_string.str" of 115200 bits exceeds limit of 4096 - not probed
+ Use 'probe -create -packed 115200 worklib.uvm_pkg::uvm_bits_to_string.str' or 'setenv SHM_PACKED_LIMIT 115200' to adjust limit.
+UVM_INFO @ 0: reporter [RNTST] Running test dma_reg_test...
+UVM_INFO /xcelium20.09/tools//methodology/UVM/CDNS-1.2/sv/src/base/uvm_spell_chkr.svh(123) @ 0: reporter [UVM/CONFIGDB/SPELLCHK] include_coverage not located, did you mean vif
+UVM_INFO /xcelium20.09/tools//methodology/UVM/CDNS-1.2/sv/src/base/uvm_root.svh(605) @ 0: reporter [UVMTOP] UVM testbench topology:
+----------------------------------------------------------------
+Name                         Type                    Size  Value
+----------------------------------------------------------------
+uvm_test_top                 dma_reg_test            -     @1889
+  env                        dma_model_env           -     @1955
+    dma_agnt                 dma_agent               -     @2004
+      driver                 dma_driver              -     @2262
+        rsp_port             uvm_analysis_port       -     @2364
+        seq_item_port        uvm_seq_item_pull_port  -     @2312
+      monitor                dma_monitor             -     @2166
+        item_collected_port  uvm_analysis_port       -     @2229
+      sequencer              dma_sequencer           -     @2395
+        rsp_export           uvm_analysis_export     -     @2455
+        seq_item_export      uvm_seq_item_pull_imp   -     @3015
+        arbitration_queue    array                   0     -    
+        lock_queue           array                   0     -    
+        num_last_reqs        integral                32    'd1  
+        num_last_rsps        integral                32    'd1  
+----------------------------------------------------------------
+
+Design WR addr 400 Data 12341234
+Design WR addr 404 Data 12345678
+Design WR addr 408 Data 12349abc
+Design WR addr 40c Data 1234def0
+Design RD addr 400 Data 12341234
+Design RD addr 404 Data 12345678
+Design RD addr 408 Data 12349abc
+Design RD addr 40c Data 1234def0
+Design WR addr 400 Data 12341234
+Design WR addr 404 Data 12345678
+Design WR addr 408 Data 12349abc
+Design WR addr 40c Data 1234def0
+Design RD addr 400 Data 12341234
+Design RD addr 404 Data 12345678
+Design RD addr 408 Data 12349abc
+Design RD addr 40c Data 1234def0
+UVM_INFO /xcelium20.09/tools//methodology/UVM/CDNS-1.2/sv/src/base/uvm_objection.svh(1271) @ 445: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO dma_test.sv(56) @ 445: uvm_test_top [dma_reg_test] ---------------------------------------
+UVM_INFO dma_test.sv(57) @ 445: uvm_test_top [dma_reg_test] ----           TEST PASS           ----
+UVM_INFO dma_test.sv(58) @ 445: uvm_test_top [dma_reg_test] ---------------------------------------
+UVM_INFO /xcelium20.09/tools//methodology/UVM/CDNS-1.2/sv/src/base/uvm_report_server.svh(847) @ 445: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :    8
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[RNTST]     1
+[TEST_DONE]     1
+[UVM/CONFIGDB/SPELLCHK]     1
+[UVM/RELNOTES]     1
+[UVMTOP]     1
+[dma_reg_test]     3
+
+Simulation complete via $finish(1) at time 445 NS + 59
+/xcelium20.09/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_root.svh:543     $finish;
+xcelium> exit
+TOOL:	xrun	20.09-s003: Exiting on Jan 28, 2023 at 01:50:31 EST  (total: 00:00:07)

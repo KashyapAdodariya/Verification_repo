@@ -1,0 +1,124 @@
+xrun: 20.09-s003: (c) Copyright 1995-2020 Cadence Design Systems, Inc.
+TOOL:	xrun	20.09-s003: Started on Jan 28, 2023 at 01:54:50 EST
+xrun
+	-Q
+	-unbuffered
+	-timescale 1ns/1ns
+	-sysv
+	-access +rw
+	+UVM_TESTNAME=user_callback_test
+	-uvmnocdnsextra
+	-uvmhome /xcelium20.09/tools//methodology/UVM/CDNS-1.2/sv
+	/xcelium20.09/tools//methodology/UVM/CDNS-1.2/sv/src/uvm_macros.svh
+	design.sv
+	testbench.sv
+  constraint wr_rd_c { wr_en != rd_en; }; 
+                                        |
+xmvlog: *W,UEXPSC (mem_seq_item.sv,35|40): Ignored unexpected semicolon following SystemVerilog description keyword (constraint).
+(`include file: mem_seq_item.sv line 35, `include file: mem_agent.sv line 5, `include file: mem_env.sv line 5, `include file: mem_base_test.sv line 5, file: testbench.sv line 8)
+    req.randomize();
+                |
+xmvlog: *W,FUNTSK (mem_sequence.sv,27|16): function called as a task without void'().
+(`include file: mem_sequence.sv line 27, `include file: mem_agent.sv line 8, `include file: mem_env.sv line 5, `include file: mem_base_test.sv line 5, file: testbench.sv line 8)
+	Top level design units:
+		uvm_pkg
+		$unit_0x4ccdf83b
+		tbench_top
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+Loading snapshot worklib.tbench_top:sv .................... Done
+SVSEED default: 1
+xmsim: *W,RNDXCELON: A newer version of the SystemVerilog constraint solver is being used which has better support for array-solving, new solve-order mechanism, and seed stability enhancements..
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /xcelium20.09/tools/xcelium/files/xmsimrc
+xcelium> source /xcelium20.09/tools//methodology/UVM/CDNS-1.2/sv/files/tcl/uvm_sim.tcl
+xcelium> run
+UVM_INFO /xcelium20.09/tools//methodology/UVM/CDNS-1.2/sv/src/base/uvm_root.svh(412) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+CDNS-UVM-1.2 (20.09-s003)
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test user_callback_test...
+--------------------------------------------------------------
+Name                       Type                    Size  Value
+--------------------------------------------------------------
+uvm_test_top               user_callback_test      -     @1897
+  env                      mem_model_env           -     @1964
+    mem_agnt               mem_agent               -     @2015
+      driver               mem_driver              -     @2046
+        rsp_port           uvm_analysis_port       -     @2151
+        seq_item_port      uvm_seq_item_pull_port  -     @2099
+      sequencer            mem_sequencer           -     @2184
+        rsp_export         uvm_analysis_export     -     @2244
+        seq_item_export    uvm_seq_item_pull_imp   -     @2804
+        arbitration_queue  array                   0     -    
+        lock_queue         array                   0     -    
+        num_last_reqs      integral                32    'd1  
+        num_last_rsps      integral                32    'd1  
+--------------------------------------------------------------
+UVM_INFO user_callback.sv(14) @ 0: reporter [USER_CALLBACK] [update_pkt] before packet modification
+----------------------------------
+Name     Type          Size  Value
+----------------------------------
+req      mem_seq_item  -     @2916
+  addr   integral      4     'h0  
+  wr_en  integral      1     'h0  
+  rd_en  integral      1     'h1  
+  wdata  integral      8     'h99 
+----------------------------------
+UVM_INFO user_callback.sv(17) @ 0: reporter [USER_CALLBACK] [update_pkt] after packet modification
+----------------------------------
+Name     Type          Size  Value
+----------------------------------
+req      mem_seq_item  -     @2916
+  addr   integral      4     'hf  
+  wr_en  integral      1     'h0  
+  rd_en  integral      1     'h1  
+  wdata  integral      8     'h99 
+----------------------------------
+UVM_INFO mem_driver.sv(38) @ 0: uvm_test_top.env.mem_agnt.driver [mem_driver] Recived Drive packet
+----------------------------------
+Name     Type          Size  Value
+----------------------------------
+req      mem_seq_item  -     @2916
+  addr   integral      4     'hf  
+  wr_en  integral      1     'h0  
+  rd_en  integral      1     'h1  
+  wdata  integral      8     'h99 
+----------------------------------
+UVM_INFO /xcelium20.09/tools//methodology/UVM/CDNS-1.2/sv/src/base/uvm_objection.svh(1271) @ 50: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO /xcelium20.09/tools//methodology/UVM/CDNS-1.2/sv/src/base/uvm_report_server.svh(847) @ 50: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :    6
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[RNTST]     1
+[TEST_DONE]     1
+[USER_CALLBACK]     2
+[UVM/RELNOTES]     1
+[mem_driver]     1
+
+Simulation complete via $finish(1) at time 50 NS + 58
+/xcelium20.09/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_root.svh:543     $finish;
+xcelium> exit
+TOOL:	xrun	20.09-s003: Exiting on Jan 28, 2023 at 01:54:58 EST  (total: 00:00:08)
