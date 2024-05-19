@@ -1,0 +1,4 @@
+address=2345;data=1234;hsize=1
+address=abcd;data=1234;hsize=2
+address=1234;data=1234;hsize=3
+address=FFFF;data=1234;hsize=4
